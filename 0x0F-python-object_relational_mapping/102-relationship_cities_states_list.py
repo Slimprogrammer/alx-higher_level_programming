@@ -1,19 +1,19 @@
 #!/usr/bin/python3
-from relationship_state import Base, State
-from relationship_city import City
-from sqlalchemy.orm import sessionmaker, relationship
-from sqlalchemy import create_engine
-import sys
+"""Module that performs MySQL query through MySQLAlchemy.
 """
-    Module that performs MySQL query through MySQLAlchemy.
-"""
-
 
 if __name__ == "__main__":
+
+    from relationship_state import Base, State
+    from relationship_city import City
+    from sqlalchemy.orm import sessionmaker, relationship
+    from sqlalchemy import create_engine
+    import sys
+
     db_uri = 'mysql+mysqldb://{}:{}@localhost/{}'.format(
-                                                            sys.argv[1],
-                                                            sys.argv[2],
-                                                            sys.argv[3])
+        sys.argv[1],
+        sys.argv[2],
+        sys.argv[3])
 
     engine = create_engine(db_uri, pool_pre_ping=True)
     Base.metadata.create_all(engine)
