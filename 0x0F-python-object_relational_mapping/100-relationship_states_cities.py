@@ -5,6 +5,7 @@
 #                                            <mysql password> /
 #                                            <database name>
 import sys
+import sqlalchemy
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from relationship_state import State
