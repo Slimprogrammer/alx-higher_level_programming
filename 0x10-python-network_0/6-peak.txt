@@ -1,2 +1,2 @@
-#complexity
+#complexity of six
 O(log(n))
